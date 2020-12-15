@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { StochValueContainer } from './components/StochValueContainer';
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
         <h2>Stoch index for 1h, 4h, 1d periods</h2>
 
         <div className='table-container'>
-            <div className='stoch-value-container'>
+            <div className='stoch-value-container header'>
                 <span className='pair-symbol'>Pair symbol</span>
                 <span className='stoch-value'>Stoch 1h</span>
                 <span className='stoch-value'>Stoch 4h</span>

@@ -32,22 +32,12 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .table-container {
-  width: 30%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80vw;
 }
 
 .stoch-value-container {
@@ -55,4 +45,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  &.header {
+    padding-bottom: 10px;
+  }
 }

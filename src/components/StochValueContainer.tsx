@@ -8,6 +8,7 @@ interface StochValueContainerProps {
 
 export function StochValueContainer(props: StochValueContainerProps) {
     const [countedStochs, setCountedStochs] = useState([]);
+    const [bgColor, setBgColor] = useState('');
 
     useEffect(() => {
         const getKlines1h = getKlines(props.pairSymbol, "1h");
@@ -15,7 +16,7 @@ export function StochValueContainer(props: StochValueContainerProps) {
         const getKlines1d = getKlines(props.pairSymbol, "1d");
         axios.all([getKlines1h, getKlines4h, getKlines1d]).then(
             axios.spread((...allData) => {
-                const countedStochs = allData.map(dataArray => calculateStoch(dataArray.data.slice(-14)));
+                const countedStochs = allData.map(dataArray => calculateStoch(dataArray.data));
                 return {
                     symbol: props.pairSymbol,
                     countedStochs
@@ -42,7 +43,9 @@ export function StochValueContainer(props: StochValueContainerProps) {
                     return (
                         <span
                             key={Math.random()*10}
-                            className='stoch-value'>
+                            className='stoch-value'
+                            style={calculateBgColor(value)}
+                        >
                             {value.toFixed(2)}
                         </span>
                     )
@@ -55,9 +58,14 @@ export function StochValueContainer(props: StochValueContainerProps) {
         return axios.get('https://api.binance.com/api/v1/klines', {
             params: {
                 symbol,
-                interval
+                interval,
+                limit: 14
             }
         })
+    }
+
+    function calculateBgColor(value: number): any {
+        return { backgroundColor: value <= 20 ? `rgba(0,255,0,${1 - 3*value/100})` : 'inherit' }
     }
 
 
