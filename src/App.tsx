@@ -1,24 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { StochValueContainer } from './components/StochValueContainer';
 
 function App() {
+  const standard = [
+      'BTCUSDT',
+      'FLMUSDT',
+      'FTTUSDT',
+      'CRVUSDT',
+      'ETHUSDT',
+      'FIOUSDT',
+      'UNFIUSDT',
+
+  ];
+
+  const innovationZones = [
+      'XVSUSDT',
+      'WNXMUSDT',
+      'WINGUSDT',
+      'UNFIUSDT',
+      'SUSHIUSDT',
+      'SUSDUSDT',
+      'SUNUSDT',
+      'NBSUSDT',
+      'HARDUSDT',
+      'FLMUSDT'
+  ]
+
+  const pairSymbols = innovationZones;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h2>Stoch index for 1h, 4h, 1d periods</h2>
+
+        <div className='table-container'>
+            <div className='stoch-value-container'>
+                <span className='pair-symbol'>Pair symbol</span>
+                <span className='stoch-value'>Stoch 1h</span>
+                <span className='stoch-value'>Stoch 4h</span>
+                <span className='stoch-value'>Stoch 1d</span>
+            </div>
+            {pairSymbols.map(pairSymbol => {
+                return <StochValueContainer key={pairSymbol} pairSymbol={pairSymbol}/>
+            })}
+        </div>
     </div>
   );
 }
