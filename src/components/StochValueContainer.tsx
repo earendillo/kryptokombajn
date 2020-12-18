@@ -35,9 +35,12 @@ export function StochValueContainer(props: StochValueContainerProps) {
         }
     }, [props.pairSymbol])
 
+    const pair = props.pairSymbol.split('USDT').join('_USDT');
+    const pairUrl = `https://www.binance.com/en/trade/${pair}`
+
     return (
         <div className='stoch-value-container'>
-            <span className='pair-symbol'>{props.pairSymbol}</span>
+            <span className='pair-symbol'><a href={pairUrl} target='_blank'>{props.pairSymbol}</a></span>
             {
                 countedStochs.map((value: any) => {
                     return (
