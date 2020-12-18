@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "259504d8555cf54996cdb2466f66f8b2",
+    "revision": "f041b8988152113d161e4b8b6c837719",
     "url": "/kryptokombajn/index.html"
   },
   {
-    "revision": "3b041e2a55f64a53767d",
+    "revision": "ee00063da97f56661451",
     "url": "/kryptokombajn/static/css/main.117e9a2f.chunk.css"
   },
   {
-    "revision": "355dfdce212fc5ca3ffd",
-    "url": "/kryptokombajn/static/js/2.64bce4ed.chunk.js"
+    "revision": "7a665ccb2df104684ad4",
+    "url": "/kryptokombajn/static/js/2.63ea76fa.chunk.js"
   },
   {
     "revision": "570d362d673dab785e62d2b8563e1118",
-    "url": "/kryptokombajn/static/js/2.64bce4ed.chunk.js.LICENSE.txt"
+    "url": "/kryptokombajn/static/js/2.63ea76fa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3b041e2a55f64a53767d",
-    "url": "/kryptokombajn/static/js/main.27d70f5c.chunk.js"
+    "revision": "ee00063da97f56661451",
+    "url": "/kryptokombajn/static/js/main.08c8a329.chunk.js"
   },
   {
     "revision": "a5fb79325a1e5165e067",
