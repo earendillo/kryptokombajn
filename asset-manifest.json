@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/kryptokombajn/static/css/main.117e9a2f.chunk.css",
-    "main.js": "/kryptokombajn/static/js/main.08c8a329.chunk.js",
-    "main.js.map": "/kryptokombajn/static/js/main.08c8a329.chunk.js.map",
+    "main.css": "/kryptokombajn/static/css/main.e0af03fd.chunk.css",
+    "main.js": "/kryptokombajn/static/js/main.fd6b7226.chunk.js",
+    "main.js.map": "/kryptokombajn/static/js/main.fd6b7226.chunk.js.map",
     "runtime-main.js": "/kryptokombajn/static/js/runtime-main.af34a12f.js",
     "runtime-main.js.map": "/kryptokombajn/static/js/runtime-main.af34a12f.js.map",
     "static/js/2.63ea76fa.chunk.js": "/kryptokombajn/static/js/2.63ea76fa.chunk.js",
     "static/js/2.63ea76fa.chunk.js.map": "/kryptokombajn/static/js/2.63ea76fa.chunk.js.map",
     "index.html": "/kryptokombajn/index.html",
-    "precache-manifest.aaf9041fb9da0dfa2205efd4893f3a56.js": "/kryptokombajn/precache-manifest.aaf9041fb9da0dfa2205efd4893f3a56.js",
+    "precache-manifest.7095942b29948890cdc226ab20e45f04.js": "/kryptokombajn/precache-manifest.7095942b29948890cdc226ab20e45f04.js",
     "service-worker.js": "/kryptokombajn/service-worker.js",
-    "static/css/main.117e9a2f.chunk.css.map": "/kryptokombajn/static/css/main.117e9a2f.chunk.css.map",
+    "static/css/main.e0af03fd.chunk.css.map": "/kryptokombajn/static/css/main.e0af03fd.chunk.css.map",
     "static/js/2.63ea76fa.chunk.js.LICENSE.txt": "/kryptokombajn/static/js/2.63ea76fa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.af34a12f.js",
     "static/js/2.63ea76fa.chunk.js",
-    "static/css/main.117e9a2f.chunk.css",
-    "static/js/main.08c8a329.chunk.js"
+    "static/css/main.e0af03fd.chunk.css",
+    "static/js/main.fd6b7226.chunk.js"
   ]
 }

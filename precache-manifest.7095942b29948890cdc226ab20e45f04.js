@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f041b8988152113d161e4b8b6c837719",
+    "revision": "7e53c48feaa94b53c2ca86ad5f89220d",
     "url": "/kryptokombajn/index.html"
   },
   {
-    "revision": "ee00063da97f56661451",
-    "url": "/kryptokombajn/static/css/main.117e9a2f.chunk.css"
+    "revision": "478baa6d5b08c83d6c4d",
+    "url": "/kryptokombajn/static/css/main.e0af03fd.chunk.css"
   },
   {
     "revision": "7a665ccb2df104684ad4",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kryptokombajn/static/js/2.63ea76fa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ee00063da97f56661451",
-    "url": "/kryptokombajn/static/js/main.08c8a329.chunk.js"
+    "revision": "478baa6d5b08c83d6c4d",
+    "url": "/kryptokombajn/static/js/main.fd6b7226.chunk.js"
   },
   {
     "revision": "a5fb79325a1e5165e067",
