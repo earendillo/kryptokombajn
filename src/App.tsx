@@ -8,18 +8,23 @@ function App() {
   let symbolsUSDT;
   let symbolsBUSD;
 
-  const pairs = [];
+  let results;
+
+  // const pairs = ['GRTUSDT'];
 
   let pairSymbols;
 
     useEffect(() => {
-        axios.get('https://api.binance.com/api/v1/exchangeInfo').then(response => {
+        axios.get('https://api.binance.com/api/v3/exchangeInfo').then(response => {
             const symbols = response.data.symbols.filter((symbol: any) => symbol.status === 'TRADING');
             symbolsUSDT = symbols.filter((symbol: any) => symbol.quoteAsset === 'USDT');
             symbolsBUSD = symbols.filter((symbol: any) => symbol.quoteAsset === 'BUSD');
-            pairSymbols = symbolsUSDT.map((obj: any) => obj.symbol);
-            setSymbols(pairSymbols);
-        });
+            pairSymbols = symbolsUSDT.map((obj: any) => obj.symbol.trim());
+            setSymbols(pairSymbols as any);
+            return pairSymbols;
+        }).then(pairSymbols => {
+
+        })
     }, [])
 
   return (
@@ -32,6 +37,7 @@ function App() {
                 <span className='stoch-value'>Stoch 1h</span>
                 <span className='stoch-value'>Stoch 4h</span>
                 <span className='stoch-value'>Stoch 1d</span>
+                <span className='stoch-value'>Volume, M USDT</span>
             </div>
             {symbols.map(pairSymbol => {
                 return <StochValueContainer key={pairSymbol} pairSymbol={pairSymbol}/>
