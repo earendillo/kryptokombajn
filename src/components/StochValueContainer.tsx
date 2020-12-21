@@ -113,8 +113,6 @@ export function StochValueContainer(props: StochValueContainerProps) {
         return { backgroundColor: value <= 20 ? `rgba(0,255,0,${1 - 3*value/100})` : 'inherit' }
     }
 
-
-
     function compareNumbers(a: number, b: number): number {
         return a - b;
     }
