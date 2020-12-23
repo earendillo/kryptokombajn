@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kryptokombajn/precache-manifest.7095942b29948890cdc226ab20e45f04.js"
+  "/kryptokombajn/precache-manifest.8cade39f29319610da2dd4bc19694383.js"
 );
 
 self.addEventListener('message', (event) => {
