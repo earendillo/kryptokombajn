@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.scss';
 import axios, { AxiosResponse } from "axios";
 import { StochValueContainer } from './components/StochValueContainer';
+import { LoadingIndicator } from "./components/LoadingIndicator";
 import { Kline } from "./interfaces/interfaces";
 
 interface CryptoData {
@@ -20,7 +21,7 @@ function App() {
     let pairSymbols;
 
     useEffect(() => {
-        axios.get('https://api.binance.com/api/v3/exchangeInfo').then(response => {
+        axios.get('https://api.binance.com/api/v1/exchangeInfo').then(response => {
             const symbols = response.data.symbols.filter((symbol: any) => symbol.status === 'TRADING');
             symbolsUSDT = symbols.filter((symbol: any) => symbol.quoteAsset === 'USDT');
             symbolsBUSD = symbols.filter((symbol: any) => symbol.quoteAsset === 'BUSD');
@@ -63,28 +64,24 @@ function App() {
                     <span className='stoch-value'>Stoch 1d</span>
                     <span className='stoch-value'>Volume, M USDT</span>
                 </div>
-                { !isLoading && cryptoData.length && cryptoData.length === symbols.length ? renderCryptoData() : 'lołding dejta' }
+                { !isLoading && cryptoData.length && cryptoData.length === symbols.length ? renderCryptoData() : <LoadingIndicator/> }
             </div>
         </div>
     );
 
     function renderCryptoData() {
         return cryptoData.map((data) => {
-            return <div key={data.symbol}>
-                <span className='pair-symbol'>{data.symbol}</span>
-                {renderStochData(data.stochs)}
-                <span className='pair-symbol'>{data.volume}</span>
-            </div>
+            return <StochValueContainer symbol={data.symbol} stochData={data.stochs} volume={data.volume} />
         })
     }
 
-    function renderStochData(stochData) {
-        return <div>
-            {stochData.map(stochValue => {
-                return <span className='pair-symbol' key={Math.random()*stochValue}>{stochValue}</span>
-            })}
-        </div>
-    }
+    // function renderStochData(stochData) {
+    //     return <div>
+    //         {stochData.map(stochValue => {
+    //             return <span className='pair-symbol' key={Math.random()*stochValue}>{stochValue}</span>
+    //         })}
+    //     </div>
+    // }
 
     function getKlines(symbol: string, interval: string) {
         return axios.get('https://api.binance.com/api/v3/klines', {
