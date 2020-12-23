@@ -17,7 +17,6 @@ function App() {
     const [isLoading, setLoadingStatus] = useState<boolean>(false);
     let symbolsUSDT;
     let symbolsBUSD;
-    let testData: any = [];
     let pairSymbols;
 
     useEffect(() => {
@@ -48,6 +47,10 @@ function App() {
 
     useEffect(() => {
         if (symbols.length === cryptoData.length) {
+            const cryptoDataSortedByVolume = [...cryptoData].sort((a, b) => {
+                return b.volume - a.volume;
+            })
+            setCryptoData(cryptoDataSortedByVolume);
             setLoadingStatus(false);
         }
     }, [cryptoData, symbols])
@@ -75,12 +78,11 @@ function App() {
         })
     }
 
-    // function renderStochData(stochData) {
-    //     return <div>
-    //         {stochData.map(stochValue => {
-    //             return <span className='pair-symbol' key={Math.random()*stochValue}>{stochValue}</span>
-    //         })}
-    //     </div>
+    // function sortByVolume() {
+    //     const cryptoDataSortedByVolume = [...cryptoData].sort((a, b) => {
+    //         return b.volume - a.volume;
+    //     })
+    //     setCryptoData(cryptoDataSortedByVolume);
     // }
 
     function getKlines(symbol: string, interval: string) {
