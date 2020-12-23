@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ac8cb1f03a0c21c17d09864e97a7c2fd",
+    "revision": "ea1980adc373bbafe6bac71049dcb20a",
     "url": "/kryptokombajn/index.html"
   },
   {
